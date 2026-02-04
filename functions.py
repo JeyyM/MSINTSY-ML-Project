@@ -185,3 +185,67 @@ class Functions:
         }
 
         return mapping.get(x, 0)
+    
+    def compress_icorpm(self, icorpm):
+
+        icorpm_str = str(icorpm).lower()
+
+        if pd.isna(icorpm):
+            return 'neither'
+        elif icorpm_str == 'individual contributor':
+            return 'individual contributor'
+        elif icorpm_str == 'people manager':
+            return 'people manager'
+        else:
+            return 'neither'
+        
+    def compress_industry(self, industry):
+        if pd.isna(industry):
+            return 'others'
+        
+        industry_str = str(industry).lower()
+        
+        if industry_str == 'software development':
+            return 'software development'
+        elif industry_str == 'internet, telecomm or information services':
+            return 'internet/telecomm/information services'
+        elif industry_str in ['fintech', 'banking/financial services', 'insurance']:
+            return 'fintech'
+        elif industry_str == 'manufacturing':
+            return 'manufacturing'
+        elif industry_str == 'higher education':
+            return 'higher education'
+        elif industry_str == 'retail and consumer services':
+            return 'retail and consumer services'
+        elif industry_str == 'transportation, or supply chain':
+            return 'transportation, or supply chain'
+        elif industry_str == 'aviation/aerospace':
+            return 'aviation/aerospace'
+        elif industry_str == 'automotive':
+            return 'automotive'
+        elif industry_str == 'computer systems design and services':
+            return 'computer systems design'
+        elif industry_str in ['media & advertising services', 'marketing']:
+            return 'media and advertising'
+        elif industry_str == 'energy':
+            return 'energy'
+        elif industry_str == 'entertainment':
+            return 'entertainment'
+        elif industry_str in ['government and defense', 'legal']:
+            return 'government'
+        elif industry_str == 'consulting/professional services':
+            return 'consulting/professional services'
+        elif industry_str == 'healthcare & pharmaceuticals':
+            return 'healthcare'
+        elif industry_str == 'non-profit':
+            return 'non-profit'
+        elif industry_str == 'real estate':
+            return 'real estate'
+        elif industry_str == 'agriculture':
+            return 'agriculture'
+        elif industry_str == 'human resources':
+            return 'human resources'
+        elif industry_str == 'environment':
+            return 'environment'
+        else:
+            return 'others'
