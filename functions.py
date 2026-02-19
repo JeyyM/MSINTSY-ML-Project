@@ -232,12 +232,12 @@ class Functions:
         mapping = {
             "Just me - I am a freelancer, sole proprietor, etc.": 1,
             "Less than 20 employees": 2,
-            "20 to 99 employees": 2,
-            "100 to 499 employees": 3,
-            "500 to 999 employees": 4,
-            "1,000 to 4,999 employees": 5,
-            "5,000 to 9,999 employees": 6,
-            "10,000 or more employees": 7,
+            "20 to 99 employees": 3,
+            "100 to 499 employees": 4,
+            "500 to 999 employees": 5,
+            "1,000 to 4,999 employees": 6,
+            "5,000 to 9,999 employees": 7,
+            "10,000 or more employees": 8,
         }
 
         return mapping.get(x, 0)
@@ -517,3 +517,8 @@ class Functions:
         
         return skill_features
 
+    def get_color(self, text):
+        import hashlib
+        hash_hex = hashlib.md5(text.encode()).hexdigest()
+        return f'#{hash_hex[:6]}'
+    
